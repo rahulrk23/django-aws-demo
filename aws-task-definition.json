@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-flask-task-definition",
+          "awslogs-group": "/ecs/demo-django-task-definition",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -22,14 +22,14 @@
           "containerPort": 80
         },
         {
-          "hostPort": 443,
-          "protocol": "tcp",
-          "containerPort": 443
-        },
-        {
           "hostPort": 8000,
           "protocol": "tcp",
           "containerPort": 8000
+        },
+        {
+          "hostPort": 443,
+          "protocol": "tcp",
+          "containerPort": 443
         }
       ],
       "command": null,
@@ -47,7 +47,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-flask-repository",
+      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-django:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -64,7 +64,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "demo-flask-repository"
+      "name": "demo-django"
     }
   ],
   "placementConstraints": [],
@@ -74,8 +74,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-flask-task-definition:1",
-  "family": "demo-flask-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-django-task-definition:1",
+  "family": "demo-django-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
