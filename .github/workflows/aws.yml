@@ -37,9 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       AWS_DEFAULT_REGION: us-east-1
-      AWS_ECR_REPOSITORY_NAME: demo-flask-repository
-      AWS_ECS_SERVICE_NAME: flask-demo-service
-      AWS_ECS_CLUSTER_NAME: flask-demo-cluster2
+      AWS_ECR_REPOSITORY_NAME: demo-django
+      AWS_ECS_SERVICE_NAME: demo-django-service
+      AWS_ECS_CLUSTER_NAME: demo-django-cluster
 
     steps:
     - name: Checkout
@@ -61,7 +61,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ env.AWS_ECR_REPOSITORY_NAME }}
+        ECR_REPOSITORY: demo-django
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -102,13 +102,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: aws-task-definition.json
-        container-name: demo-flask-repository
+        container-name: demo-django
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: flask-demo-service
-        cluster: flask-demo-cluster2
+        service: demo-django-service
+        cluster: demo-django-cluster
         wait-for-service-stability: true
