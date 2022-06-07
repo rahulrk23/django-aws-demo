@@ -9,18 +9,13 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/aws-ecs-demo-task-definition",
+          "awslogs-group": "/ecs/demo-flask-task-definition",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
       },
       "entryPoint": null,
       "portMappings": [
-        {
-          "hostPort": 8000,
-          "protocol": "tcp",
-          "containerPort": 8000
-        },
         {
           "hostPort": 80,
           "protocol": "tcp",
@@ -30,6 +25,11 @@
           "hostPort": 443,
           "protocol": "tcp",
           "containerPort": 443
+        },
+        {
+          "hostPort": 8000,
+          "protocol": "tcp",
+          "containerPort": 8000
         }
       ],
       "command": null,
@@ -47,7 +47,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/aws-ecs-demo",
+      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-flask-repository",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -64,7 +64,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "aws-ecs-demo"
+      "name": "demo-flask-repository"
     }
   ],
   "placementConstraints": [],
@@ -74,8 +74,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/aws-ecs-demo-task-definition:1",
-  "family": "aws-ecs-demo-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-flask-task-definition:1",
+  "family": "demo-flask-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
