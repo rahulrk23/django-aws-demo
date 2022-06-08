@@ -47,7 +47,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-django:latest",
+      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-django:f65070a9fb7dc683deeeb8bb8276167e9c33cc0e",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -74,7 +74,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-django-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-django-task-definition:2",
   "family": "demo-django-task-definition",
   "requiresAttributes": [
     {
@@ -142,7 +142,7 @@
     "cpuArchitecture": null
   },
   "cpu": "512",
-  "revision": 1,
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
