@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-django-task-definition",
+          "awslogs-group": "/ecs/django-demo-task-def",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -25,11 +25,6 @@
           "hostPort": 8000,
           "protocol": "tcp",
           "containerPort": 8000
-        },
-        {
-          "hostPort": 443,
-          "protocol": "tcp",
-          "containerPort": 443
         }
       ],
       "command": null,
@@ -47,7 +42,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/demo-django:f65070a9fb7dc683deeeb8bb8276167e9c33cc0e",
+      "image": "009848063967.dkr.ecr.us-east-1.amazonaws.com/django-demo",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -64,7 +59,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "demo-django"
+      "name": "django-demo"
     }
   ],
   "placementConstraints": [],
@@ -74,8 +69,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/demo-django-task-definition:2",
-  "family": "demo-django-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:009848063967:task-definition/django-demo-task-def:1",
+  "family": "django-demo-task-def",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -142,7 +137,7 @@
     "cpuArchitecture": null
   },
   "cpu": "512",
-  "revision": 2,
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
