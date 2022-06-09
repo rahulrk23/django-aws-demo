@@ -24,9 +24,9 @@
 #    and best practices on handling the access key credentials.
 
 on:
-  push:
-    branches:
-      - "master"
+#   push:
+#     branches:
+#       - "master"
   release:
     types: [created]
   # run manually
